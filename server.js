@@ -2,7 +2,7 @@
 var express = require("express");
 var path = require("path")
 
-var session = require("express-sesion");
+var session = require("express-session");
 var passport = require("./config/passport");
 
 // compress
