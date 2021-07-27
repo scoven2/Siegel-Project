@@ -157,10 +157,11 @@ $(document).ready(() => {
                     let td2 = $('<td>');
                     let td3 = $('<td>');
                     let td4 = $('<td>');
-                    let td5 = $('<td>');
+
 
                     td0.text(purchase.id);
                     td1.text(purchase.UserId);
+
 
                     Object.values(purchase).forEach((purchaseElement) => {
                         if (typeof purchaseElement === 'object' && purchaseElement != null && purchaseElement != undefined) {
@@ -175,7 +176,7 @@ $(document).ready(() => {
                     tr.append(td2);
                     tr.append(td3);
                     tr.append(td4);
-                    tr.append(td5);
+
                     $('#purchasesTableBody').append(tr);
                 });
             });
