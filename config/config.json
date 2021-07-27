@@ -3,14 +3,14 @@
         "username": "yo35y5ehlyb1pj14",
         "password": "pdb1yosif6o2hc6v",
         "database": "ui7uw7xbkvtaiqcm",
-        "host": "s465z7sj4pwhp7fn.cbetxkdyhwsb.us-east-1.rds.amazonaws.com	",
+        "host": "s465z7sj4pwhp7fn.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
         "dialect": "mysql"
     },
     "test": {
-        "username": "yo35y5ehlyb1pj14",
+        "username": "root",
         "password": null,
-        "database": "ui7uw7xbkvtaiqcm",
-        "host": "s465z7sj4pwhp7fn.cbetxkdyhwsb.us-east-1.rds.amazonaws.com	",
+        "database": "mymovies_db",
+        "host": "127.0.0.1",
         "dialect": "mysql"
     },
     "production": {
