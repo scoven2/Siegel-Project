@@ -1,7 +1,10 @@
 module.exports = function(sequelize, DataTypes) {
     var Movie = sequelize.define("Movie", {
         genre_ids: DataTypes.INTEGER,
-        id: DataTypes.INTEGER,
+        id: {
+            type: DataTypes.INTEGER,
+            primaryKey: true
+        },
         original_language: DataTypes.STRING,
         original_title: DataTypes.STRING,
         overview: DataTypes.STRING,
@@ -28,5 +31,3 @@ module.exports = function(sequelize, DataTypes) {
 
     return Movie;
 };
-
-// module.exports = Purchase; ?

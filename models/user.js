@@ -1,4 +1,4 @@
-var bcrypt = require('bcryptsjs');
+var bcrypt = require('bcryptjs');
 
 module.exports = function(sequelize, DataTypes) {
     var User = sequelize.define('User', {
@@ -44,5 +44,3 @@ module.exports = function(sequelize, DataTypes) {
     });
     return User;
 }
-
-// module.exports = Purchase; ?

@@ -1,5 +1,5 @@
 // dependencies
-var express = require("express");
+const express = require("express");
 var path = require("path")
 
 var session = require("express-session");

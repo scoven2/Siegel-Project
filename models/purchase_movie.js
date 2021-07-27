@@ -6,19 +6,19 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.INTEGER,
             references: {
                 model: db.Purchase,
-                key: 'id'
+                key: 'id',
+                primaryKey: true
             }
         },
         MovieId: {
             type: DataTypes.INTEGER,
             references: {
                 model: db.Movie,
-                key: 'id'
+                key: 'id',
+                primaryKey: true
             }
         }
     });
 
     return Purchase_Movie;
 }
-
-// module.exports = Purchase; ?
