@@ -2,7 +2,7 @@ $(document).ready(() => {
 
     let cleanedCarts;
 
-    let user = $.get('/api/user_data').then(function (data) {
+    let user = $.get('/api/user_data').then(function(data) {
         console.log('user.email: ', data.email);
         console.log('user.id: ', data.id);
         return data;
@@ -20,7 +20,7 @@ $(document).ready(() => {
 
         if ($(event.target).attr('id') === 'confirmPurchase') {
 
-            $.get('/api/user_data').then(function (data) {
+            $.get('/api/user_data').then(function(data) {
                 console.log('user.email: ', data.email);
                 console.log('user.id: ', data.id);
 
@@ -41,42 +41,71 @@ $(document).ready(() => {
                     method: 'DELETE',
                     url: `/api/shoppingcarts/${data.id}`
                 }).then((cart_answer) => {
-                    console.log('cart deleted: ', cart_answer);
+                    console.log('Cart deleted: ', cart_answer);
                 });
 
-                $('#purchaseConfirmationModal').on('hidden.bs.modal', function (e) {
-                    loadShoppingCart();
+                $('#purchaseConfirmationModal').modal();
+
+                $('#purchaseConfirmationModal').on('hidden.bs.modal', function(e) {
+                    loadShoppingcart();
                     loadPurchases();
                     $('#purchaseDiv').show();
-                    $('#confirmPurchse').hide();
+                    $('#confirmPurchase').hide();
                 })
             });
         }
     });
 
 
-    const loadShoppingCart = () => {
-        console.log('loadShoppingCart()');
+    const loadShoppingcart = () => {
+        console.log('loadShoppingcart()');
 
         $('#cartTableBody').empty();
 
         $.ajax({
-            method: 'GET',
-            url: '/api/shppingcarts/'
-        })
-        .then((shoppingcarts) => {
-            let total = 0;
+                method: 'GET',
+                url: '/api/shoppingcarts/'
+            })
+            .then((shoppingcarts) => {
+                let total = 0;
 
-            if (shoppingcarts.length > 0) {
-                cleanedCarts = shoppingcarts.map((shoppingcart) =>{
-                    return {
-                        id: shoppingcart.id,
-                        UserId: shoppingcart.UserId,
-                        Movies: shoppingcart.Movies
-                    }
-                });
+                if (shoppingcarts.length > 0) {
+                    cleanedCarts = shoppingcarts.map((shoppingcart) => {
+                        return {
+                            id: shoppingcart.id,
+                            UserId: shoppingcart.UserId,
+                            Movies: shoppingcart.Movies
+                        }
+                    });
 
-                cleanedCarts.forEach((cart) => {
+                    cleanedCarts.forEach((cart) => {
+                        let tr = $('<tr>');
+                        let td0 = $('<td>');
+                        let td1 = $('<td>');
+                        let td2 = $('<td>');
+                        let td3 = $('<td>');
+                        let td4 = $('<td>');
+
+                        td0.text(cart.id);
+                        td1.text(cart.UserId);
+
+                        Object.values(cart).forEach((cartElement) => {
+                            if (typeof cartElement === 'object' && cartElement != null && cartElement[0] != undefined) {
+                                td2.text(cartElement[0].id);
+                                td3.text(cartElement[0].title);
+                                td4.text(cartElement[0].price);
+                                total = +parseFloat(cartElement[0].price);
+                            }
+                            tr.append(td0);
+                            tr.append(td1);
+                            tr.append(td2);
+                            tr.append(td3);
+                            tr.append(td4);
+                        });
+                        $('#cartTableBody').append(rt);
+                    });
+
+                    total = total.toFixed(2);
                     let tr = $('<tr>');
                     let td0 = $('<td>');
                     let td1 = $('<td>');
@@ -84,59 +113,32 @@ $(document).ready(() => {
                     let td3 = $('<td>');
                     let td4 = $('<td>');
 
-                    td0.text(cart.id);
-                    td1.text(cart.UserId);
+                    td3.text('Total');
+                    td4.text(`${total}`);
+                    tr.append(td0);
+                    tr.append(td1);
+                    tr.append(td2);
+                    tr.append(td3);
+                    tr.append(td4);
+                    $('#carTableBody').append(tr);
 
-                    Object.values(cart).forEach((cartElement) => {
-                        if (typeof cartElement === 'object' && cartElement != null && cartElement[0] != undefined) {
-                            td2.text(cartElement[0].id);
-                            td3.text(cartElement[0].title);
-                            td4.text(cartElement[0].price);
-                            total =+ parseFloat(cartElement[0].price);
-                        }
-                        tr.append(td0);
-                        tr.append(td1);
-                        tr.append(td2);
-                        tr.append(td3);
-                        tr.append(td4);
-                    });
-                    $('#cartTableBody').append(rt);
-                });
-
-                total = total.toFixed(2);
-                let tr = $('<tr>');
-                let td0 = $('<td>');
-                let td1 = $('<td>');
-                let td2 = $('<td>');
-                let td3 = $('<td>');
-                let td4 = $('<td>');
-
-                td3.text('Total');
-                td4.text(`${total}`);
-                tr.append(td0);
-                tr.append(td1);
-                tr.append(td2);
-                tr.append(td3);
-                tr.append(td4);
-                $('#carTableBody').append(tr);
-            
-            } else {
-                $('#confirmPurchase').hide();
-            } 
-        });
+                } else {
+                    $('#confirmPurchase').hide();
+                }
+            });
     }
 
     const loadPurchases = () => {
         $('#purchasesTableBody').empty();
 
-        $.get('api/user_data').then(function (data) {
+        $.get('api/user_data').then(function(data) {
             console.log('user.emal: ', data.email);
             console.log('user.id ', data.id);
 
             $ajax({
                 method: 'GET',
                 url: `/api/purchese/${data.id}`
-            }).then ((purchases) => {
+            }).then((purchases) => {
 
                 let cleanedPurchases = purchases.map((purchase) => {
                     return {
@@ -167,7 +169,7 @@ $(document).ready(() => {
                             td4.text(purchaseElement[0].price);
                         }
                     });
-                    
+
                     tr.append(td0);
                     tr.append(td1);
                     tr.append(td2);
@@ -181,7 +183,7 @@ $(document).ready(() => {
     }
 
     const init = () => {
-        loadShoppingCart();
+        loadShoppingcart();
         loadPurchases()
         $('#purchasesDiv').hide();
     }
