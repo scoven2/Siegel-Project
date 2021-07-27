@@ -7,14 +7,17 @@
         "dialect": "mysql"
     },
     "test": {
-        "username": "root",
-        "password": null,
-        "database": "mymovies_db",
-        "host": "127.0.0.1",
+        "username": "yo35y5ehlyb1pj14",
+        "password": "pdb1yosif6o2hc6v",
+        "database": "ui7uw7xbkvtaiqcm",
+        "host": "s465z7sj4pwhp7fn.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
         "dialect": "mysql"
     },
     "production": {
-        "use_env_variable": "JAWSDB_URL",
+        "username": "yo35y5ehlyb1pj14",
+        "password": "pdb1yosif6o2hc6v",
+        "database": "ui7uw7xbkvtaiqcm",
+        "host": "s465z7sj4pwhp7fn.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
         "dialect": "mysql"
     }
 }
