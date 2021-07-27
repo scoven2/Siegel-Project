@@ -2,10 +2,10 @@ var db = require('../models');
 
 module.exports = function(sequelize, DataTypes) {
     const Shoppingcart_Movie = sequelize.define('Shoppingcart_Movie', {
-        shoppingcartId: {
+        ShoppingcartId: {
             type: DataTypes.INTEGER,
             references: {
-                model: db.shoppingcart,
+                model: db.Shoppingcart,
                 key: 'id'
             }
         },
