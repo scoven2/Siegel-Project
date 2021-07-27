@@ -20,3 +20,5 @@ module.exports = function(sequelize, DataTypes) {
 
     return Purchase_Movie;
 }
+
+// module.exports = Purchase; ?
