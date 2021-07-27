@@ -33,7 +33,21 @@ app.set("view engine", "handlebars");
 // static directory
 app.use(express.static("public"));
 
-// use sesions to know the user's login status
+// use sessions to know the user's login status
 app.use(session({ secret: "poohandshia", resave: true, saveUninitialized: true }));
 app.use(passport.initialize());
 app.use(passport.session());
+
+// routes
+require("./routes/html-routes.js")(app);
+require("./routes/movie-api-routes.js")(app);
+require("./routes/purchase-api-routes.js")(app);
+require("./routes/shoppingcart-api-routes.js")(app);
+require("./routes/user-api-routes.js")(app);
+
+// sync sequelize models and starting using express app
+db.sequelize.sync().then(function() {
+    app.listen(PORT, function() {
+        console.log("==> Listening on port %s. Visit http://localhost%s/ in your browser.", PORT, PORT);
+    });
+});
