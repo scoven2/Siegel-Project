@@ -33,7 +33,7 @@ app.set("view engine", "handlebars");
 // static directory
 app.use(express.static("public"));
 
-// use sesions to know the user's login status
+// use sessions to know the user's login status
 app.use(session({ secret: "poohandshia", resave: true, saveUninitialized: true }));
 app.use(passport.initialize());
 app.use(passport.session());
