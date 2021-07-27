@@ -25,4 +25,15 @@ app.use(express.json());
 // set up handlebars
 var exphbs = require("express-handlebars");
 
-//
+app.engine("handlebars", exphbs({
+    defaultLayout: "main",
+}));
+app.set("view engine", "handlebars");
+
+// static directory
+app.use(express.static("public"));
+
+// use sesions to know the user's login status
+app.use(session({ secret: "poohandshia", resave: true, saveUninitialized: true }));
+app.use(passport.initialize());
+app.use(passport.session());
