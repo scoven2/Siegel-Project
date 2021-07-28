@@ -1,5 +1,7 @@
 module.exports = function(sequelize, DataTypes) {
     var Movie = sequelize.define("Movie", {
+        adult: DataTypes.STRING,
+        backdrop_path: DataTypes.STRING,
         genre_ids: DataTypes.INTEGER,
         id: {
             type: DataTypes.INTEGER,
@@ -12,6 +14,7 @@ module.exports = function(sequelize, DataTypes) {
         poster_path: DataTypes.STRING,
         release_date: DataTypes.STRING,
         title: DataTypes.STRING,
+        video: DataTypes.STRING,
         vote_average: DataTypes.DECIMAL(10, 2),
         vote_count: DataTypes.INTEGER,
         createdAt: {
