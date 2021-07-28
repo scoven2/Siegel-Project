@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS mymovies_db;
+
+CREATE DATABASE mymovies_db;
