@@ -1,11 +1,11 @@
 const router = require('express').Router();
-const { Project, User } = require('../models');
+const { Movie, User } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async(req, res) => {
     try {
-        // Get all projects and JOIN with user data
-        const projectData = await Project.findAll({
+        // Get all Movies and JOIN with user data
+        const MovieData = await Movie.findAll({
             include: [{
                 model: User,
                 attributes: ['name'],
@@ -13,11 +13,11 @@ router.get('/', async(req, res) => {
         });
 
         // Serialize data so the template can read it
-        const projects = projectData.map((project) => project.get({ plain: true }));
+        const Movies = MovieData.map((Movie) => Movie.get({ plain: true }));
 
         // Pass serialized data and session flag into template
         res.render('homepage', {
-            projects,
+            Movies,
             logged_in: req.session.logged_in
         });
     } catch (err) {
@@ -25,19 +25,19 @@ router.get('/', async(req, res) => {
     }
 });
 
-router.get('/project/:id', async(req, res) => {
+router.get('/Movie/:id', async(req, res) => {
     try {
-        const projectData = await Project.findByPk(req.params.id, {
+        const MovieData = await Movie.findByPk(req.params.id, {
             include: [{
                 model: User,
                 attributes: ['name'],
             }, ],
         });
 
-        const project = projectData.get({ plain: true });
+        const Movie = MovieData.get({ plain: true });
 
-        res.render('project', {
-            ...project,
+        res.render('Movie', {
+            ...Movie,
             logged_in: req.session.logged_in
         });
     } catch (err) {
@@ -51,7 +51,7 @@ router.get('/profile', withAuth, async(req, res) => {
         // Find the logged in user based on the session ID
         const userData = await User.findByPk(req.session.user_id, {
             attributes: { exclude: ['password'] },
-            include: [{ model: Project }],
+            include: [{ model: Movie }],
         });
 
         const user = userData.get({ plain: true });
