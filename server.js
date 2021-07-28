@@ -1,53 +1,41 @@
-// dependencies
+const path = require("path");
 const express = require("express");
-var path = require("path")
+const session = require("express-session");
+const exphbs = require("express-handlebars");
+const routes = require("./controllers");
+const helpers = require("./utils/helpers");
 
-var session = require("express-session");
-var passport = require("./config/passport");
+const sequelize = require("./config/connection");
+const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
-// compress
-var compression = require('compression')
+const app = express();
+const PORT = process.env.PORT || 3001;
 
-// express app and listening port
-var app = express();
-var PORT = process.env.PORT || 8090;
+// Set up Handlebars.js engine with custom helpers
+const hbs = exphbs.create({ helpers });
 
-// compress all responses
-app.use(compression())
+const sess = {
+  secret: "Super secret secret",
+  cookie: {},
+  resave: false,
+  saveUninitialized: true,
+  store: new SequelizeStore({
+    db: sequelize,
+  }),
+};
 
-// requiring our models for syncing 
-var db = require("./config/connection");
+app.use(session(sess));
 
-// set up express app to handle data parsing
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
-
-// set up handlebars
-var exphbs = require("express-handlebars");
-
-app.engine("handlebars", exphbs({
-    defaultLayout: "main",
-}));
+// Inform Express.js on which template engine to use
+app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
 
-// static directory
-app.use(express.static("public"));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, "public")));
 
-// use sessions to know the user's login status
-app.use(session({ secret: "poohandshia", resave: true, saveUninitialized: true }));
-app.use(passport.initialize());
-app.use(passport.session());
+app.use(routes);
 
-// routes
-require("./routes/html-routes.js")(app);
-require("./routes/movie-api-routes.js")(app);
-require("./routes/purchase-api-routes.js")(app);
-require("./routes/shoppingcart-api-routes.js")(app);
-require("./routes/user-api-routes.js")(app);
-
-// sync sequelize models and starting using express app
-db.sync().then(function() {
-    app.listen(PORT, function() {
-        console.log("==> Listening on port %s. Visit http://localhost%s/ in your browser.", PORT, PORT);
-    });
+sequelize.sync({ force: false }).then(() => {
+  app.listen(PORT, () => console.log("Now listening"));
 });
