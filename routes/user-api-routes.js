@@ -1,4 +1,4 @@
-var db = require('../models-notworking');
+var db = require('../models');
 
 var passport = require('../config/passport');
 

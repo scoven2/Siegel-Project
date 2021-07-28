@@ -1,4 +1,4 @@
-var db = require('../models-notworking');
+var db = require('../models');
 
 module.exports = function(app) {
     app.get('.api/movies', function(req, res) {
