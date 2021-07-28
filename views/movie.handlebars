@@ -1,61 +1,14 @@
-<h1>Check It Out!</h1>
-<h2>Here Is Your List Of Movies</h2>
-
-{{!-- List table --}}
-<table class="table table-hover">
-    <thread>
-        <tr>
-            <th scope="col">ShoppingcartId</th>
-            <th scope="col">UserId</th>
-            <th scope="col">MovieId</th>
-            <th scope="col">Title</th>
-            <th scope="col">Price</th>
-        </tr>
-    </thread>
-    <tbody id="cartTableBody"></tbody>
-</table>
-
-{{!-- cart table --}}
-<button type="button" class="btn btn-secondary" id="continueBrowsing">Continue Browsing</button>
-<button type="button" class="btn btn-secondary" id="purchasesHistory">Purchases History</button>
-<button type="button" class="btn btn-primary" id="confirmPurchase">Confirm Purchase</button>
-
-<div id="purchasesDiv">
-    <h1 class-"mt-5">Purchases History</h1>
-
-    {{!-- purchases table --}}
-    <table class-"table table-hover">
-        <thread>
-            <tr>
-            <th scope="col">PurchaseId</th>
-            <th scope="col">UserId</th>
-            <th scope="col">MovieId</th>
-            <th scope="col">Title</th>
-            <th scope="col">Price</th>
-            <th scope="col">Date</th>
-            </tr>
-        </thread>
-        {{!-- purchases data --}}
-        <tbody id="purchasesTableBody"></tbody>
-    </table>
-</div>
-
-{{!-- purchases table and confirmation modal --}}
-<div class="modal fade" id="purchaseConfirmationModal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="purchaseConfirmationModal" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-header">
-            <h5 class="modal-title" id="purchaseConfirmationModal">Purchase Confirmation</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-        <div class="modal-body">
-            <p>Payment Received!</p>
-            <p>Enjoy watching the movie!!</p>
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        </div>
-    </div>
-</div>
+<div class="text-center">
+    <h2>{{name}}</h2>
+    <p>{{{get_emoji}}}</p>
+    <p>{{description}}</p>
+    <p>Created by {{user.name}} on {{format_date date_created}}</p>
+    <p>
+        <span for="img" aria-label="money">💲</span>
+        <span class="dollar-amount">{{format_amount needed_funding}}</span>
+        needed
+    </p>
+    <p>
+        <button class="btn btn-primary">Review this Movie</button>
+    </p>
 </div>
