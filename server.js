@@ -15,7 +15,7 @@ var PORT = process.env.PORT || 8090;
 // compress all responses
 app.use(compression())
 
-// requiring our models for syncing
+// requiring our models for syncing 
 var db = require("./config/connection");
 
 // set up express app to handle data parsing
