@@ -1,33 +1,32 @@
 const passport = require('passport');
 
 const LocalStrategy = require('passport-local').Strategy;
-const db = require('../models');
+const db = require('../models/connection');
 
-passport.use(new LocalStrategy(
-    {
+passport.use(new LocalStrategy({
         usernameField: 'email'
     },
     function(email, password, done) {
 
         db.User.findOne({
-            where: {
-                email: email
-            }
-        })
-        .then(function(dbUser) {
+                where: {
+                    email: email
+                }
+            })
+            .then(function(dbUser) {
 
-            if (!dbUser) {
-                return done(null, false, {
-                    message: 'incorrect email'
-                });
-            
-            } else if (!dbUser.validPassword(password)) {
-                return done(null, false, {
-                    message: 'incorrect password'
-                });
-            }
-            return done(null, dbUser);
-        });
+                if (!dbUser) {
+                    return done(null, false, {
+                        message: 'incorrect email'
+                    });
+
+                } else if (!dbUser.validPassword(password)) {
+                    return done(null, false, {
+                        message: 'incorrect password'
+                    });
+                }
+                return done(null, dbUser);
+            });
     }
 ));
 

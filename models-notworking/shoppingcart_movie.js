@@ -1,4 +1,4 @@
-var db = require('../models');
+var db = require('.');
 
 module.exports = function(sequelize, DataTypes) {
     const Shoppingcart_Movie = sequelize.define('Shoppingcart_Movie', {
