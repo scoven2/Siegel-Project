@@ -1,19 +1,19 @@
-{{#each projects as |project|}}
-<div class="row mb-4 project">
+{{#each movies as |movie|}}
+<div class="row mb-4 movie">
     <h2>
         {{get_emoji}}
-        <a href="/project/{{project.id}}">{{project.name}}</a>
+        <a href="/movie/{{movie.id}}">{{movie.name}}</a>
     </h2>
     <p>
         <span for="img" aria-label="money">💲</span>
-        <span class="dollar-amount">{{format_amount prject.needed_funding}}</span>
+        <span class="dollar-amount">{{format_amount movie.needed_funding}}</span>
         needed!
     </p>
-    <p>Created by {{prject.user.name}} on {{format_date project.date_created}}</p>
+    <p>Created by {{movie.user.name}} on {{format_date movie.date_created}}</p>
 </div>
 <div class="col-md-7">
     <p>
-        {{project.description}}
+        {{movie.description}}
     </p>
 </div>
 {{/each}}
