@@ -1,36 +1,44 @@
-module.exports = function(sequelize, DataTypes) {
-    var Movie = sequelize.define("Movie", {
-        adult: DataTypes.STRING,
-        backdrop_path: DataTypes.STRING,
-        genre_ids: DataTypes.INTEGER,
-        id: {
-            type: DataTypes.INTEGER,
-            primaryKey: true
-        },
-        original_language: DataTypes.STRING,
-        original_title: DataTypes.STRING,
-        overview: DataTypes.STRING,
-        popularity: DataTypes.DECIMAL(10, 3),
-        poster_path: DataTypes.STRING,
-        release_date: DataTypes.STRING,
-        title: DataTypes.STRING,
-        video: DataTypes.STRING,
-        vote_average: DataTypes.DECIMAL(10, 2),
-        vote_count: DataTypes.INTEGER,
-        createdAt: {
-            type: DataTypes.DATE,
-            defaultValue: new Date()
-        },
-        updatedAt: {
-            type: DataTypes.DATE,
-            defaultValue: new Date()
-        }
-    });
+const { Model, DataTypes } = require('sequelize');
+const sequelize = require('../config/connection');
 
-    Movie.associate = function(models) {
-        Movie.belongsToMany(models.Shoppingcart, { through: 'Shoppingcart_Movie' });
-        Movie.belongsToMany(models.Purchase, { through: 'Purchase_Movie' });
-    };
+class Movie extends Model {}
 
-    return Movie;
-};
+Movie.init({
+    id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        primaryKey: true,
+        autoIncrement: true,
+    },
+    name: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    description: {
+        type: DataTypes.STRING,
+    },
+    date_created: {
+        type: DataTypes.DATE,
+        allowNull: false,
+        defaultValue: DataTypes.NOW,
+    },
+    needed_funding: {
+        type: DataTypes.FLOAT,
+        allowNull: false,
+    },
+    user_id: {
+        type: DataTypes.INTEGER,
+        references: {
+            model: 'user',
+            key: 'id',
+        },
+    },
+}, {
+    sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'movie',
+});
+
+module.exports = Movie;
