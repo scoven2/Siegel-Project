@@ -19,6 +19,6 @@ module.exports = function(sequelize, DataTypes) {
         });
         Purchase.belongsToMany(models.Movie, { through: 'Purchase_Movie' });
     }
-    return Purchase
+    return Purchase;
 
 };
