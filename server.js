@@ -16,7 +16,7 @@ var PORT = process.env.PORT || 8090;
 app.use(compression())
 
 // requiring our models for syncing
-var db = require("./models");
+var db = require("./config/connection");
 
 // set up express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
@@ -46,7 +46,7 @@ require("./routes/shoppingcart-api-routes.js")(app);
 require("./routes/user-api-routes.js")(app);
 
 // sync sequelize models and starting using express app
-db.sequelize.sync().then(function() {
+db.sync().then(function() {
     app.listen(PORT, function() {
         console.log("==> Listening on port %s. Visit http://localhost%s/ in your browser.", PORT, PORT);
     });
