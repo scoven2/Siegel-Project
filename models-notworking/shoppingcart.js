@@ -14,7 +14,7 @@ module.exports = function(sequelize, DataTypes) {
         Shoppingcart.belongsTo(models.User, {
             allowNull: true
         });
-        Shoppingcart.belongsToMany(models.Movie, { through: 'Shoppingcart_Movie' });
+        Shoppingcart.belongsToMany(models.movie, { through: 'Shoppingcart_Movie' });
     };
 
     return Shoppingcart;
