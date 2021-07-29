@@ -1,4 +1,5 @@
-DROP DATABASE IF EXISTS ui7uw7xbkvtaiqcm;
+DROP DATABASE IF EXISTS hm239z3m3upndlx7;
 
 
-CREATE DATABASE ui7uw7xbkvtaiqcm;
+CREATE DATABASE hm239z3m3upndlx7;
+
