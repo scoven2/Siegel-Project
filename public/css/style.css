@@ -31,3 +31,13 @@
         bottom: 0;
         width: 100%;
     }
+    
+    .text-xl {
+        font-size: 2rem;
+    }
+    
+    a:link {
+        text-decoration: none;
+        margin: auto;
+        margin-left: 10px;
+    }
