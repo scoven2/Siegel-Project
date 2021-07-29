@@ -1,8 +1,8 @@
-# Siegel-Project
+## Siegel-Project
 
 # Ho[w]asit [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-# Table of Contents
+## Table of Contents
 * [Challenge](#challenge)
 * [User Story](#user-story)
 * [Acceptance Critieria](#acceptance-criteria)
