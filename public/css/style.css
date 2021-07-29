@@ -41,7 +41,6 @@ a:link {
     text-decoration: none;
     margin: auto;
     margin-left: 10px;
-    color: black!IMPORTANT;
 }
 
 .text-center.content-center.max-w-md.mx-auto.rounded.overflow-hidden.shadow-lg {
@@ -72,10 +71,24 @@ body {
     background-size: cover;
 }
 
-a {
-    color: black;
-}
-
 h3 {
     font-weight: bold;
+}
+
+.font-bold.text-xl.mb-2 {
+    color: #1b89bc;
+}
+
+.btn.btn-sm.btn-danger {
+    border-radius: 1rem;
+    background-color: teal;
+}
+
+.col-md-6 {
+    padding-right: 50px;
+}
+
+.movie-list {
+    padding-left: 50px;
+    padding-right: 15px;
 }
