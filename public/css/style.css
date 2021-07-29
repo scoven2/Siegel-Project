@@ -27,7 +27,6 @@
     footer {
         padding-top: 10px;
         padding-bottom: 0px;
-        position: fixed;
         bottom: 0;
         width: 100%;
     }
@@ -40,4 +39,12 @@
         text-decoration: none;
         margin: auto;
         margin-left: 10px;
+    }
+    
+    .text-center.content-center.max-w-md.mx-auto.rounded.overflow-hidden.shadow-lg {
+        margin-bottom: 30px;
+    }
+    
+    .font-bold.text-xl.mb-2 {
+        text-transform: capitalize;
     }
