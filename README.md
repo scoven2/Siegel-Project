@@ -20,7 +20,6 @@ With your team, you’ll conceive and execute a design that solves a real-world 
 > AS A USER I want to see other peoples posts and reviews of different movies/tv shows, SO I can pick out what I want to watch.\
 > AS A USER I want to log out of Ho[w]asit completely once finished, SO my account is no longer accessible for others to use.
 
-
 ### Acceptance Critieria
 > Use Node.js and Express.js to create a RESTful API.\
 > Use Handlebars.js as the template engine.\
@@ -38,6 +37,7 @@ With your team, you’ll conceive and execute a design that solves a real-world 
 > Have a professional README (with unique name, description, technologies used, screenshot, and link to deployed application).
 
 ### Live Link
+
 [Github](https://github.com/scoven2/Siegel-Project)
 
 ![Screenshot (33)](https://user-images.githubusercontent.com/80021714/127571122-53ef38e2-8a17-4b72-b37c-4142c4eab9d5.png)
@@ -63,12 +63,19 @@ In the root directory of the project, type in the terminal command line 'npm i' 
 * eslint
 * Javascript
 
+### Breakdown of roles and tasks
+* Front-end (HTML & Handlebars): [Sarah Siegel](https://github.com/sarsieg)
+* Front-end (JS Functionality): [Steven Siegel](https://github.com/StevegSiegel)
+* Back-end (Routes & Models): [Scott Siegel](https://github.com/scoven2)
+* All contributed equally in every task necessary to compelete the project
+
 ### Usage
 1. install npm init -y
 2. npm i
 3. do 'npm i' followed by all the technologies used (listed above, besides JavaScript) to install all necessary packages
 4. connect mySQL workbench and your JavaScript files as well as connect to JAWSDB
 5. run node server
+
 
 
 ### License 
