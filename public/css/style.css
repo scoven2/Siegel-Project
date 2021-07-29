@@ -18,8 +18,8 @@ header,
     text-decoration: underline;
 }
 
-.dollar-amount {
-    color: #056605;
+.star-amount {
+    color: black;
     font-weight: bold;
     margin-left: -5px;
 }
@@ -91,4 +91,12 @@ h3 {
 .movie-list {
     padding-left: 50px;
     padding-right: 15px;
+}
+
+button.mb-3.rounded-full.flex.items-center.shadow.bg-blue-500.px-4.py-2.text-white {
+    align-content: center;
+    margin: auto;
+    margin-bottom: 26px;
+    background-color: #1b89bc;
+    ;
 }

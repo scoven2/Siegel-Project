@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>How[s]asit</title>
+    <title>Ho[w]asit</title>
     <link
       rel="stylesheet"
       href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
@@ -124,7 +124,7 @@
                 <!-- Profile dropdown -->
                 <div class="ml-3 relative">
                   <div>
-                    <button
+                    <button href="/profile"
                       type="button"
                       class="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
                       id="user-menu-button"
@@ -196,6 +196,8 @@
 
       </header>
       <main class="container container-fluid mt-5">
+        <a href="/profile">
+        <button class="mb-3 rounded-full flex items-center shadow bg-blue-500 px-4 py-2 text-white hover:bg-blue-400" href="/profile">CREATE REVIEW</button></a>
         <!-- Render the sub layout -->
         {{{body}}}
       </main>
