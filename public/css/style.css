@@ -25,6 +25,7 @@
     }
     
     footer {
+        position: fixed;
         padding-top: 10px;
         padding-bottom: 0px;
         bottom: 0;
