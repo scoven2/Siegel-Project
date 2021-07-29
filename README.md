@@ -38,9 +38,9 @@ With your team, you’ll conceive and execute a design that solves a real-world 
 > Have a professional README (with unique name, description, technologies used, screenshot, and link to deployed application).
 
 ### Live Link
-[Live Link](https://github.com/scoven2/Siegel-Project)
+[Github](https://github.com/scoven2/Siegel-Project)
 
-![Screenshot]![Screenshot (33)](https://user-images.githubusercontent.com/80021714/127571122-53ef38e2-8a17-4b72-b37c-4142c4eab9d5.png)
+![Screenshot (33)](https://user-images.githubusercontent.com/80021714/127571122-53ef38e2-8a17-4b72-b37c-4142c4eab9d5.png)
 
 
 ### Installation
