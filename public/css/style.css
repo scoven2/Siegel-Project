@@ -48,3 +48,8 @@
     .font-bold.text-xl.mb-2 {
         text-transform: capitalize;
     }
+    
+    body {
+        background-image: url(../images/depositphotos_76669773-stock-photo-white-grey-background-in-soft.jpg);
+        background-size: cover;
+    }
