@@ -1,24 +1,23 @@
 <!-- Loop over each object in the movies array -->
 {{#each movies as |movie| }}
-<div class="row mb-4 movie">
-  <div class="col-md-5">
-    <h2>
-      <!-- Call helper function with triple brackets to render the emoji span as HTML -->
-      {{{get_emoji}}}
-      <a href="/movie/{{movie.id}}">{{movie.name}}</a>
-    </h2>
-    <p>
-      <span for="img" aria-label="money">💲</span>
-      <!-- Pass needed_funding value to the helper function -->
-      <span class="dollar-amount">{{format_amount movie.needed_funding}}</span>
-      needed!
+<div class="text-center"></div>
+<div class="text-center content-center max-w-md mx-auto rounded overflow-hidden shadow-lg">
+  <img class="w-full" src="https://www.hollywoodreporter.com/wp-content/uploads/2021/05/Paramount2-copy.jpg?w=681&h=383&crop=1" alt="Sunset in the mountains">
+  <div class="px-6 py-4">
+    <div class="font-bold text-xl mb-2"><a href="/movie/{{movie.id}}">{{movie.name}}</a></div>
+    <span class="dollar-amount">{{format_amount needed_funding}}</span>
+    <span for="img" aria-label="stars">⭐</span>
+    <p class="text-gray-700 text-base">
+      {{description}}
     </p>
-    <p>Created by {{movie.user.name}} on {{format_date movie.date_created}}</p>
   </div>
-  <div class="col-md-7">
-    <p>
-      {{movie.description}}
-    </p>
+  <div class="px-6 pt-4 pb-2">
+    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Review By: {{user.name}}</span>
+    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{{format_date date_created}}</span>
   </div>
 </div>
+
+
 {{/each}}
+
+
