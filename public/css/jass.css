@@ -502,11 +502,6 @@ button {
     margin: 0;
 }
 
-a {
-    color: #1b89bc;
-    text-decoration: none;
-}
-
 a:hover {
     color: #065b83;
     text-decoration: underline;

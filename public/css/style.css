@@ -30,6 +30,7 @@
         padding-bottom: 0px;
         bottom: 0;
         width: 100%;
+        margin-top: 50;
     }
     
     .text-xl {
@@ -40,6 +41,7 @@
         text-decoration: none;
         margin: auto;
         margin-left: 10px;
+        color: black!IMPORTANT;
     }
     
     .text-center.content-center.max-w-md.mx-auto.rounded.overflow-hidden.shadow-lg {
@@ -47,5 +49,10 @@
     }
     
     .font-bold.text-xl.mb-2 {
+        text-transform: capitalize;
+    }
+    
+    h2,
+    h4 {
         text-transform: capitalize;
     }
