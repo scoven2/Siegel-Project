@@ -2,6 +2,7 @@
 
 # Ho[w]asit [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+
 ## Table of Contents
 * [Challenge](#challenge)
 * [User Story](#user-story)
@@ -9,16 +10,20 @@
 * [Live Link](#live-link)
 * [Installation](#installation)
 * [Technologies Used](#technologies-used)
+* [Breakdown of roles and tasks](#breakdown-of-roles-and-tasks)
 * [Usage](#usage)
 * [License](#license)
 
+
 ### Challenge
 With your team, you’ll conceive and execute a design that solves a real-world problem. In creating your first collaborative full-stack application, you’ll combine a robust back end--with servers, databases, advanced APIs, and user authentication—-to an intuitive front end. You’ll continue to build on the agile development methodologies you’ve used throughout this course, like storing your project code in GitHub, managing your work with a project management tool, and implementing feature and bug fixes using the Git branch workflow and pull requests.
+
 
 ### User Story
 > AS A USER I want to log into Ho[w]asit using an authentication process with my personal email and password, SO I can access my account.\
 > AS A USER I want to see other peoples posts and reviews of different movies/tv shows, SO I can pick out what I want to watch.\
 > AS A USER I want to log out of Ho[w]asit completely once finished, SO my account is no longer accessible for others to use.
+
 
 ### Acceptance Critieria
 > Use Node.js and Express.js to create a RESTful API.\
@@ -36,6 +41,7 @@ With your team, you’ll conceive and execute a design that solves a real-world 
 > Meet good-quality coding standards (file structure, naming conventions, follows best practices for class/id naming conventions, indentation, quality comments, etc.).\
 > Have a professional README (with unique name, description, technologies used, screenshot, and link to deployed application).
 
+
 ### Live Link
 
 [Github](https://github.com/scoven2/Siegel-Project)
@@ -45,6 +51,7 @@ With your team, you’ll conceive and execute a design that solves a real-world 
 
 ### Installation
 In the root directory of the project, type in the terminal command line 'npm i' to download the dependencies. Make sure you have a database you can run the seeds into which are sample rows for each model, or table, to give you starter data. This is hosted on Heroku and also utilizes JawsDB. 
+
 
 ### Technologies Used
 * bcrypt
@@ -63,11 +70,13 @@ In the root directory of the project, type in the terminal command line 'npm i' 
 * eslint
 * Javascript
 
+
 ### Breakdown of roles and tasks
 * Front-end (HTML & Handlebars): [Sarah Siegel](https://github.com/sarsieg)
 * Front-end (JS Functionality): [Steven Siegel](https://github.com/StevegSiegel)
 * Back-end (Routes & Models): [Scott Siegel](https://github.com/scoven2)
 * All contributed equally in every task necessary to compelete the project
+
 
 ### Usage
 1. install npm init -y
@@ -75,7 +84,6 @@ In the root directory of the project, type in the terminal command line 'npm i' 
 3. do 'npm i' followed by all the technologies used (listed above, besides JavaScript) to install all necessary packages
 4. connect mySQL workbench and your JavaScript files as well as connect to JAWSDB
 5. run node server
-
 
 
 ### License 
