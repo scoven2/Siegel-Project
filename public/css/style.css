@@ -1,55 +1,72 @@
-    header,
-    .movie:not(:last-child) {
-        border-bottom: 1px solid #ccc;
-    }
-    
-    .no-button {
-        background: none;
-        border: none;
-        padding: 0;
-        cursor: pointer;
-        color: #1b89bc;
-        text-decoration: none;
-        font-size: 100%;
-    }
-    
-    .no-button:hover {
-        color: #065b83;
-        text-decoration: underline;
-    }
-    
-    .dollar-amount {
-        color: #056605;
-        font-weight: bold;
-        margin-left: -5px;
-    }
-    
-    footer {
-        padding-top: 10px;
-        padding-bottom: 0px;
-        bottom: 0;
-        width: 100%;
-    }
-    
-    .text-xl {
-        font-size: 2rem;
-    }
-    
-    a:link {
-        text-decoration: none;
-        margin: auto;
-        margin-left: 10px;
-    }
-    
-    .text-center.content-center.max-w-md.mx-auto.rounded.overflow-hidden.shadow-lg {
-        margin-bottom: 30px;
-    }
-    
-    .font-bold.text-xl.mb-2 {
-        text-transform: capitalize;
-    }
-    
-    body {
-        background-image: url(../images/depositphotos_76669773-stock-photo-white-grey-background-in-soft.jpg);
-        background-size: cover;
-    }
+header,
+.movie:not(:last-child) {
+    border-bottom: 1px solid #ccc;
+}
+
+.no-button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    color: #1b89bc;
+    text-decoration: none;
+    font-size: 100%;
+}
+
+.no-button:hover {
+    color: #065b83;
+    text-decoration: underline;
+}
+
+.dollar-amount {
+    color: #056605;
+    font-weight: bold;
+    margin-left: -5px;
+}
+
+footer {
+    position: fixed;
+    padding-top: 10px;
+    padding-bottom: 0px;
+    bottom: 0;
+    width: 100%;
+    margin-top: 50;
+}
+
+.text-xl {
+    font-size: 2rem;
+}
+
+a:link {
+    text-decoration: none;
+    margin: auto;
+    margin-left: 10px;
+    color: black!IMPORTANT;
+}
+
+.text-center.content-center.max-w-md.mx-auto.rounded.overflow-hidden.shadow-lg {
+    margin-bottom: 30px;
+}
+
+.font-bold.text-xl.mb-2 {
+    text-transform: capitalize;
+}
+
+h2,
+h4 {
+    text-transform: capitalize;
+}
+
+.px-6.py-4,
+.px-6.pt-4.pb-2 {
+    background-color: white;
+}
+
+.flex-column.justify-space-around {
+    margin-bottom: 70px;
+}
+
+body {
+    background-image: url(../images/depositphotos_76669773-stock-photo-white-grey-background-in-soft.jpg);
+    background-size: cover;
+}
