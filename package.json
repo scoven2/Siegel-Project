@@ -20,8 +20,6 @@
     },
     "homepage": "https://github.com/scoven2/Siegel-Project#readme",
     "dependencies": {
-        "14": "^3.1.6",
-        "all-the-package-names": "^1.3905.0",
         "bcrypt": "^5.0.1",
         "bcryptjs": "^2.4.3",
         "compression": "^1.7.4",
@@ -41,9 +39,7 @@
         "sequelize": "^6.6.5"
     },
     "devDependencies": {
-        "autoprefixer": "^10.3.1",
         "eslint-config-prettier": "^8.3.0",
-        "postcss": "^8.3.6",
         "prettier": "^2.3.2",
         "tailwindcss": "^2.2.7"
     }
